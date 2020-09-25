@@ -1,5 +1,5 @@
 <template>
-  <h1>{{ name }}</h1>
+  <h1 v-test-directive:a.log>{{ name }}</h1>
   <input type="text" v-model="userInput" @keyup.enter="edit">
   <Timer></Timer>
   <input type="text" v-model="vModelName">
