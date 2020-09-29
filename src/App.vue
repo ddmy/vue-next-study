@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { ref, computed, reactive, toRefs, defineAsyncComponent } from 'vue'
+import { ref, computed, reactive, toRefs, defineAsyncComponent, onMounted } from 'vue'
 import editTitle from './editTitle'
 import Timer from './components/timer.vue'
 import vModel from './components/vModel.vue'
@@ -26,6 +26,10 @@ export default {
     Timer,
     vModel,
     asyncCom
+  },
+  mounted() {
+      console.log('app 入口组件挂载完毕')
+      console.log(this.axios)
   },
   setup() {
     let { name, userInput, edit } = editTitle()
@@ -41,6 +45,9 @@ export default {
       asyncComHidden: true
     })
     let xingMing = computed(() => data.xing + data.ming)
+    onMounted(() => {
+      console.log('on--mounted')
+    })
     return { name, userInput, edit, xingMing, ...toRefs(data) }
   }
 }

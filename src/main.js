@@ -1,9 +1,13 @@
 import { createApp } from 'vue'
+// import axios from 'axios'
 import App from './App.vue'
 import ButtonMessage from './components/button.vue'
 import './index.css'
 
 const app = createApp(App)
+app.config.globalProperties.axios = {
+  axios: false
+}
 app.component('ButtonMessage', ButtonMessage)
 app.directive('test-directive', {
   // 指令具有一组生命周期钩子
