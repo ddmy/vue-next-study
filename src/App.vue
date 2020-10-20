@@ -13,6 +13,7 @@
   <button @click="asyncComHidden = false">切换展示异步组件</button>
   <asyncCom v-if="!asyncComHidden"></asyncCom>
   <forRef></forRef>
+  <testCom></testCom>
 </template>
 
 <script>
@@ -21,6 +22,7 @@ import editTitle from './editTitle'
 import Timer from './components/timer.vue'
 import vModel from './components/vModel.vue'
 import forRef from './components/forRef.vue'
+import testCom from './components/test.vue'
 const asyncCom = defineAsyncComponent(() => import('./components/async.vue'))
 export default {
   name: 'App',
@@ -28,7 +30,8 @@ export default {
     Timer,
     vModel,
     asyncCom,
-    forRef
+    forRef,
+    testCom
   },
   mounted() {
       console.log('app 入口组件挂载完毕')
