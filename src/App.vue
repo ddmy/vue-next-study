@@ -14,6 +14,7 @@
   <asyncCom v-if="!asyncComHidden"></asyncCom>
   <forRef></forRef>
   <testCom></testCom>
+  <readOnly></readOnly>
 </template>
 
 <script>
@@ -23,6 +24,7 @@ import Timer from './components/timer.vue'
 import vModel from './components/vModel.vue'
 import forRef from './components/forRef.vue'
 import testCom from './components/test.vue'
+import readOnly from './components/readOnly.vue'
 const asyncCom = defineAsyncComponent(() => import('./components/async.vue'))
 export default {
   name: 'App',
@@ -31,7 +33,8 @@ export default {
     vModel,
     asyncCom,
     forRef,
-    testCom
+    testCom,
+    readOnly
   },
   mounted() {
       console.log('app 入口组件挂载完毕')
